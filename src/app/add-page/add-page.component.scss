@@ -1,0 +1,233 @@
+.wrapper
+{
+  width: 100%;
+  margin: auto;
+  height: 80%;
+}
+
+.btn{
+   padding: 20px 174px;
+    background-color: blue;
+    color: white;
+    font-size: 21px;
+    border: none;
+}
+
+
+.btn-add {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 33px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+  margin: auto;
+  margin-top: 78px;
+  margin-left: 67px;
+  text-align: center;
+  border-radius: 35px;
+  font-size: 21px;
+}
+
+mat-card
+{
+  margin: auto;
+  margin-top: 100px;
+  margin-top: 20px;
+  transition: box-shadow 285ms ease-out;
+    display: block;
+    /* position: relative; */
+    padding: 22px;
+    border-radius: 4px;
+    height: 80%;
+    width: 85%;
+    text-align: right;
+}
+
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 30%;
+  padding: 21px;
+  border-radius: 47px;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: white;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 0px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  /* overflow: auto; */
+  background-color: #8c8d90;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+
+}
+.clearfix
+{
+  margin-left: 130px;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}
+.btn-del
+{
+   
+    background-color: blue;
+    color: white;
+  
+    border: none;
+    cursor: pointer;
+    width: 30%;
+   font-size: 20px;
+    padding: 21px;
+    border-radius: 47px;
+    opacity: 0.9;
+    margin: auto;
+
+}
+* {
+  box-sizing: border-box;
+}
+
+input, select, textarea {
+   
+    width: 66%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-left: 16px;
+
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 30px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
