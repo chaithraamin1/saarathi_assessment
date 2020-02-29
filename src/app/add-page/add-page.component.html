@@ -1,10 +1,9 @@
-
 <div class="wrapper">
-<mat-card>
- 
-  <button class="btn-add" (click)="add()">ADD EMPLOYEE</button>
-<br><br>
-  
+  <mat-card>
+
+    <button class="btn-add" (click)="add()">ADD EMPLOYEE</button>
+    <br><br>
+
     <table>
       <tr>
         <th>Name</th>
@@ -13,45 +12,44 @@
         <th>Email Id</th>
         <th>DOJ</th>
         <th>Actions</th>
-        </tr>
-<tbody *ngFor="let data of list">
+      </tr>
+      <tbody *ngFor="let data of list">
         <tr>
           <td>{{data.empname}}</td>
           <td>{{data.id}}</td>
           <td>{{data.dept}}</td>
           <td>{{data.email}}</td>
-          <td>{{data.doj}}</td>
-          <td><i class="material-icons dell" (click)='delete(data.id)'>delete</i></td>
+          <td>{{data.date}}</td>
+          <td style="cursor: pointer"><i class="material-icons dell" (click)='delete(data.id)'>delete</i></td>
         </tr>
       </tbody>
     </table>
-</mat-card>
+  </mat-card>
 </div>
 
 <div id="id01" class="modal" *ngIf="adddetails">
-    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-    <form class="modal-content" [formGroup]="empform" (ngSubmit)="submit()">
-      <div class="container">
-        <h1 style="text-align: center;">ADD EMPLOYEE DETAILS</h1>
-        <b>Name:</b>
-        <input type="text" class="input" #empname  formControlName="empname"  required>
-      
-        <div *ngIf="empname.invalid && (empname.dirty || empname.touched)"
-    class="alert alert-danger">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content" [formGroup]="empform" (ngSubmit)="submit()">
+    <div class="container">
+      <h1 style="text-align: center;">ADD EMPLOYEE DETAILS</h1>
+      <b>Name:</b>
+      <input type="text" class="input" #empname formControlName="empname" required>
 
-  <div *ngIf="name.errors.required">
-    Name is required.
-  </div>
+      <div *ngIf="empname.invalid && (empname.dirty || empname.touched)" class="alert alert-danger">
+
+        <div *ngIf="name.errors.required">
+          Name is required.
         </div>
-        <br/><br/>
+      </div>
+      <br /><br />
 
-        <mat-error *ngIf="getterinvoicenumber.length==0">Name is required</mat-error><br><br>
-       
-       <b>Employee Id:</b>
+      <mat-error *ngIf="getterinvoicenumber.length==0">Name is required</mat-error><br><br>
+
+      <b>Employee Id:</b>
       <input type="text" class="input" formControlName="id" required>
-     
-      <br/><br/>
-      <mat-error *ngIf="getterid.length==0">id required</mat-error><br/><br>
+
+      <br /><br />
+      <mat-error *ngIf="getterid.length==0">id required</mat-error><br /><br>
       <b> Department:</b>
       <select class="form-control" id="department" name="department" formControlName="dept">
         <option value="1">Sales</option>
@@ -59,64 +57,27 @@
         <option value="3">Business</option>
         <option value="4">Marketing</option>
         <option value="5">Accounts</option>
-      
+
       </select><br /><br />
       <mat-error *ngIf="getterinvoicenumber.length==0">Name is required</mat-error>
       <br><br>
-    <b> Email Id:</b>
-    <input type="email" class="input" formControlName="email" required/> 
-   
+      <b> Email Id:</b>
+      <input type="email" class="input" formControlName="email" required />
+
       <br><br>
       <mat-error *ngIf="getterinvoicenumber.length==0">Email is required</mat-error><br><br>
       <!-- <mat-form-field> -->
-        <mat-label><b>Choose a Date:</b></mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+      <mat-label><b>Choose a Date:</b></mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
       <!-- </mat-form-field> -->
-<br><br>
+      <br><br>
 
-
-        <!-- <div *ngIf="f.email.errors.email">Email must be a valid email address</div> -->
-    <!-- </div>
-   
-    <br><br>
-     <mat-error *ngIf="getteremail.length==0">Email is required</mat-error><br><br> -->
-  
-        <div class="clearfix">
-          <button type="submit"   class="btn-del" [disabled]="empform.invalid">SUBMIT</button>
-          <button type="button"  class="cancelbtn btn" (click)="clear()">CLEAR</button>
-        </div>
+      <div class="clearfix">
+        <button type="submit" class="btn-del" [disabled]="empform.invalid">SUBMIT</button>
+        <button type="button" class="cancelbtn btn" (click)="clear()">CLEAR</button>
       </div>
-    </form>
-  </div>
-
-
-
-  <!-- <div id="id02" class="modal" *ngIf="showdata">
-    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
-    
-      <div class="container" >
-     
-      </div> 
-      </div>
-    
-  </div> -->
-  <!-- <div id="id03" class="modal">
-    <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
-    <form class="modal-content">
-      <div class="container">
-        <h1>Delete Account</h1>
-        <p>Are you sure you want to delete your account?</p>
-      
-        <div class="clearfix">
-          <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
-          <button type="button" class="btn-del" (click)="deletelist(id)">Delete</button>
-        </div>
-      </div>
-    </form>
-  </div> -->
-
-
-
- 
+    </div>
+  </form>
+</div>
