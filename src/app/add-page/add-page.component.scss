@@ -3,15 +3,36 @@
   width: 100%;
   margin: auto;
   height: 80%;
+  text-align: right;
+ 
 }
 
 .btn{
    padding: 20px 174px;
-    background-color: blue;
-    color: white;
+    
+    color: black;
     font-size: 21px;
     border: none;
+
 }
+.errorMsg{
+  display: none;
+  color:red;
+  position: absolute;
+  left:18%;
+
+}
+.form-content{
+  position: relative;
+    left: 2%;
+}
+.labelStyle
+{
+    position: absolute;
+    width: 230px;
+    font-size: 17px;
+}
+
 
 
 .btn-add {
@@ -47,32 +68,32 @@ mat-card
 }
 
 
-/* Float cancel and delete buttons and add an equal width */
-.cancelbtn, .deletebtn {
+
+.cancelbtn, .submitbtn {
   float: left;
   width: 30%;
   padding: 21px;
   border-radius: 47px;
 }
 
-/* Add a color to the cancel button */
+
 .cancelbtn {
   background-color: #ccc;
   color: white;
 }
 
-/* Add a color to the delete button */
+
 .deletebtn {
   background-color: #f44336;
 }
 
-/* Add padding and center-align text to the container */
+
 .container {
   padding: 0px;
   text-align: center;
 }
 
-/* The Modal (background) */
+
 .modal {
   position: fixed;
   z-index: 1;
@@ -81,8 +102,7 @@ mat-card
   overflow: auto;
   width: 100%;
   height: 100%;
-  /* overflow: auto; */
-  background-color: #8c8d90;
+  background-color: #6b6c71;
   padding-top: 50px;
 }
 
@@ -127,37 +147,86 @@ hr {
 {
   margin-left: 130px;
 }
+@media screen and (max-width: 1024px) {
+  .wrapper{
+    width:88%;
+  }
+  .labelStyle{
+    position: unset;
+    padding-right: 44px;
+  }
+  .btn-add{
+    // width:30px;
+    color:white;
+    font-size: 12px;
+    width: 25%;
+  }
 
+}
 /* Change styles for cancel button and delete button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 480px) {
+  .wrapper{
+    width:100%;
+  }
+  td,th{
+  font-size: 13px;
+
+  }
+  .labelStyle{
+    position: unset;
+    padding-right: 44px;
+  }
+  .btn-add{
+    // width:30px;
+    color:white;
+    font-size: 13px;
+    width: 47%;
+    margin-right: 20px;
+
+  }
+  h1{
+    font-size: 20px;
+  }
   .cancelbtn, .deletebtn {
-     width: 100%;
+     width: 20%;
+     background-color: #ccc;
+    color: white;
+    position: absolute;
+    padding: 11px;
+   
+    left: 2%;
+    font-size: 13px;
+    width: 60px;
+    border-radius: 7px;
   }
 }
-.btn-del
+
+.cancelbtn
 {
    
-    background-color: blue;
-    color: white;
-  
-    border: none;
-    cursor: pointer;
-    width: 30%;
-   font-size: 20px;
-    padding: 21px;
-    border-radius: 47px;
-    opacity: 0.9;
-    margin: auto;
-
+ 
+  border: none;
+  cursor: pointer;
+  /* width: 100%; */
+  /* font-size: 20px; */
+  padding: 11px;
+  background-color: #4e4e58;
+  color: white;
+  border-radius: 9px;
+  opacity: 0.9;
+  margin: auto;
 }
 * {
   box-sizing: border-box;
 }
-
-input, select, textarea {
+.id{
+margin-left: 50px;
+}
+input, select {
    
     width: 66%;
     padding: 12px;
+    margin-left: 55px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
@@ -220,14 +289,38 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  overflow: auto;
 }
+// @media screen and (max-width: 600px) {
+// .btn-add {
+//   background-color: #4CAF50;
+//   color: white;
+//   padding: 10px 53px;
+//   font-family: Arial, Helvetica, sans-serif;
+//   border: none;
+//   cursor: pointer;
+//   width: 45%;
+//   opacity: 0.9;
+//   margin: auto;
+//   margin-top: 78px;
+//   margin-left: 67px;
+//   text-align: center;
+//   border-radius: 35px;
+//   font-size: 21px;
+// }
+
+// }
+
 
 td, th {
   border: 1px solid #dddddd;
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
-
+.width-class
+{
+  width: 20%;;
+}
 tr:nth-child(even) {
   background-color: #dddddd;
 }

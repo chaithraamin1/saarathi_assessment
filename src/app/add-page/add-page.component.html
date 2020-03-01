@@ -1,5 +1,9 @@
+
+    
+
+
 <div class="wrapper">
-  <mat-card>
+  
 
     <button class="btn-add" (click)="add()">ADD EMPLOYEE</button>
     <br><br>
@@ -19,65 +23,68 @@
           <td>{{data.id}}</td>
           <td>{{data.dept}}</td>
           <td>{{data.email}}</td>
-          <td>{{data.date}}</td>
+          <td>{{data.doj}}</td>
           <td style="cursor: pointer"><i class="material-icons dell" (click)='delete(data.id)'>delete</i></td>
         </tr>
       </tbody>
     </table>
-  </mat-card>
+  
 </div>
 
 <div id="id01" class="modal" *ngIf="adddetails">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
   <form class="modal-content" [formGroup]="empform" (ngSubmit)="submit()">
     <div class="container">
+      <div class = "form-content">
       <h1 style="text-align: center;">ADD EMPLOYEE DETAILS</h1>
-      <b>Name:</b>
-      <input type="text" class="input" #empname formControlName="empname" required>
-
-      <div *ngIf="empname.invalid && (empname.dirty || empname.touched)" class="alert alert-danger">
-
-        <div *ngIf="name.errors.required">
-          Name is required.
-        </div>
-      </div>
-      <br /><br />
-
-      <mat-error *ngIf="getterinvoicenumber.length==0">Name is required</mat-error><br><br>
-
-      <b>Employee Id:</b>
-      <input type="text" class="input" formControlName="id" required>
+      <div class = "labelStyle">  <label><b>Name</b></label></div>
+  
+      
+   <input type="text" class="input"  formControlName="empname" (keyup)="checkEmpError()" required>
+<div  id="empnameError" class = "errorMsg">Enter Name</div>
 
       <br /><br />
-      <mat-error *ngIf="getterid.length==0">id required</mat-error><br /><br>
-      <b> Department:</b>
-      <select class="form-control" id="department" name="department" formControlName="dept">
+
+      <!-- <mat-error *ngIf="getterinvoicenumber.length==0">Name is required</mat-error> -->
+      <div class = "labelStyle">  <label><b>Employee ID</b></label>  </div>
+
+   
+      <input type="text"  formControlName="id" (keyup)="checkIdError()" required>
+      <div id ="idError" class = "errorMsg">Enter Id</div>
+
+      <br /><br />
+     
+      <div class = "labelStyle">
+      <label> <b>Department</b></label></div>
+      <select class="form-control" id="department" name="department" formControlName="dept" (click)="checkDepartment()">
         <option value="1">Sales</option>
         <option value="2">Production</option>
         <option value="3">Business</option>
         <option value="4">Marketing</option>
         <option value="5">Accounts</option>
 
-      </select><br /><br />
-      <mat-error *ngIf="getterinvoicenumber.length==0">Name is required</mat-error>
-      <br><br>
-      <b> Email Id:</b>
-      <input type="email" class="input" formControlName="email" required />
+      </select>
+      <div  id="departmentError" class = "errorMsg">Select department</div>
+        <br /><br />
+     
+      <div class = "labelStyle">
+      <b> Email ID</b></div>
+      <input type="email"  id="emailid" formControlName="email" (keyup)="checkEmail()" required />
+      <div  id="emailError" class = "errorMsg">Enter Email Id</div>
 
       <br><br>
-      <mat-error *ngIf="getterinvoicenumber.length==0">Email is required</mat-error><br><br>
-      <!-- <mat-form-field> -->
-      <mat-label><b>Choose a Date:</b></mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-      <!-- </mat-form-field> -->
-      <br><br>
 
-      <div class="clearfix">
-        <button type="submit" class="btn-del" [disabled]="empform.invalid">SUBMIT</button>
+      <div class = "labelStyle">
+      <label><b>Date</b></label></div>
+     <input type = "date" formControlName="doj" (click)="checkDateError()"  required>
+     <div  id="dateError" class = "errorMsg">Select Date</div>
+
+      <br><br>
+       <div class="clearfix">
+        <button type="submit" class="btn" >SUBMIT</button>
         <button type="button" class="cancelbtn btn" (click)="clear()">CLEAR</button>
       </div>
     </div>
+  </div>
   </form>
 </div>
