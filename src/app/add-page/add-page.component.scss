@@ -4,15 +4,44 @@
   margin: auto;
   height: 80%;
   text-align: right;
- 
+ }
+.dept-content
+{
+  margin-left: 14px;
+  width: 69%;
+
+}
+ .del-cotent
+ {
+  text-align: center;
+  padding-top: 15px
+ }
+ .cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+.deletebtn {
+  background-color: #f44336;
+}
+.delete-container
+{
+    border-radius: 5px;
+    background-color: white;
+    padding-bottom: 125px;
 }
 
-.btn{
-   padding: 20px 174px;
-    
-    color: black;
-    font-size: 21px;
-    border: none;
+ .cancelbtn, .deletebtn {
+  float: left;
+  width: 30%;
+ cursor: pointer;
+  text-align: center;
+  border: none;
+  color: white;
+  font-size: 22px;
+  margin-left: 13%;
+  padding: 3%;
+  margin-top: 15px;
+  margin-bottom: 46px;
 
 }
 .errorMsg{
@@ -21,6 +50,19 @@
   position: absolute;
   left:18%;
 
+}
+.btn-group-submit
+{
+  padding-top: 34px;
+  padding-left: 17%;
+}
+
+.modal-content1
+{
+  background-color: white;
+  margin: 9% auto 27% auto;
+  border: 1px solid #888;
+  width: 39%;
 }
 .form-content{
   position: relative;
@@ -33,9 +75,11 @@
     font-size: 17px;
 }
 
+.btnadd:hover{
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
 
-
-.btn-add {
+.btnadd {
   background-color: #4CAF50;
   color: white;
   padding: 14px 33px;
@@ -45,52 +89,34 @@
   width: 20%;
   opacity: 0.9;
   margin: auto;
-  margin-top: 78px;
-  margin-left: 67px;
+  margin-top: 25px;
+  /* margin-left: 11px; */
   text-align: center;
   border-radius: 35px;
   font-size: 21px;
+  margin-bottom: 30px;
+  margin-right: 17px;
+
 }
-
-mat-card
-{
-  margin: auto;
-  margin-top: 100px;
-  margin-top: 20px;
-  transition: box-shadow 285ms ease-out;
-    display: block;
-    /* position: relative; */
-    padding: 22px;
-    border-radius: 4px;
-    height: 80%;
-    width: 85%;
-    text-align: right;
-}
-
-
-
-.cancelbtn, .submitbtn {
-  float: left;
-  width: 30%;
-  padding: 21px;
-  border-radius: 47px;
-}
-
-
-.cancelbtn {
-  background-color: #ccc;
-  color: white;
-}
-
-
-.deletebtn {
-  background-color: #f44336;
-}
-
-
 .container {
-  padding: 0px;
+  
   text-align: center;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 107px 0px;
+
+}
+
+.modal2{
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  background-color: #0c0f1f6b;
+  padding-top: 50px;
 }
 
 
@@ -106,21 +132,21 @@ mat-card
   padding-top: 50px;
 }
 
-/* Modal Content/Box */
+
 .modal-content {
   background-color: #fefefe;
-  margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 2% auto 15% auto; 
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
 }
 
-/* Style the horizontal ruler */
+
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
  
-/* The Modal Close Button (x) */
+
 .close {
   position: absolute;
   right: 35px;
@@ -136,16 +162,17 @@ hr {
   cursor: pointer;
 }
 
-/* Clear floats */
-.clearfix::after {
+
+.btngroup::after {
   content: "";
   clear: both;
   display: table;
 
 }
-.clearfix
+.btngroup
 {
-  margin-left: 130px;
+  padding-top: 3%;
+  padding-left: 17%;
 }
 @media screen and (max-width: 1024px) {
   .wrapper{
@@ -155,15 +182,17 @@ hr {
     position: unset;
     padding-right: 44px;
   }
-  .btn-add{
-    // width:30px;
+  .btnadd{
     color:white;
     font-size: 12px;
     width: 25%;
   }
+  .btnclear{
+    width: 22%;
+  }
 
 }
-/* Change styles for cancel button and delete button on extra small screens */
+
 @media screen and (max-width: 480px) {
   .wrapper{
     width:100%;
@@ -174,56 +203,44 @@ hr {
   }
   .labelStyle{
     position: unset;
-    padding-right: 44px;
+    padding-right: 23%;
+    font-size: 14px;
   }
-  .btn-add{
-    // width:30px;
+  .btnadd{
     color:white;
     font-size: 13px;
     width: 47%;
+    cursor: pointer;  
     margin-right: 20px;
 
   }
+  .btnclear {
+   
+    padding: 10px;
+    font-size: 11px;
+    border: none;
+    width: 39%;
+    color: red;
+    border-radius: 9px;
+   }
+.btnsubmit
+{
+  margin-right: 25px;
+  padding: 4% 7%;
+  font-size: 11px;
+  width: 37%;
+}
   h1{
     font-size: 20px;
   }
-  .cancelbtn, .deletebtn {
-     width: 20%;
-     background-color: #ccc;
-    color: white;
-    position: absolute;
-    padding: 11px;
-   
-    left: 2%;
-    font-size: 13px;
-    width: 60px;
-    border-radius: 7px;
-  }
+ 
+  
 }
 
-.cancelbtn
-{
-   
- 
-  border: none;
-  cursor: pointer;
-  /* width: 100%; */
-  /* font-size: 20px; */
-  padding: 11px;
-  background-color: #4e4e58;
-  color: white;
-  border-radius: 9px;
-  opacity: 0.9;
-  margin: auto;
-}
-* {
-  box-sizing: border-box;
-}
-.id{
-margin-left: 50px;
-}
+
+
+
 input, select {
-   
     width: 66%;
     padding: 12px;
     margin-left: 55px;
@@ -231,28 +248,33 @@ input, select {
     border-radius: 4px;
     resize: vertical;
     margin-left: 16px;
-
+  }
+.btnclear
+{
+    border: none;
+    cursor: pointer;
+    float: left;
+    width: 16%;
+    padding: 10px;
+    background-color: #54615e;
+    color: white;
+    border-radius: 9px;
+    opacity: 0.9;
+    margin: auto;
+    font-size: 19px;
 }
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
+.btnsubmit
+{
+    padding: 10px 36px;
+    width: 16%;
+    text-align: center;
+    color: white;
+    font-size: 19px;
+    background-color: #3f51b5;
+    border-radius: 10px;
+    margin-right: 62%;
+    border: none;
 }
-
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -271,45 +293,21 @@ input[type=submit]:hover {
   margin-top: 6px;
 }
 
-/* Clear floats after the columns */
+
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
   overflow: auto;
 }
-// @media screen and (max-width: 600px) {
-// .btn-add {
-//   background-color: #4CAF50;
-//   color: white;
-//   padding: 10px 53px;
-//   font-family: Arial, Helvetica, sans-serif;
-//   border: none;
-//   cursor: pointer;
-//   width: 45%;
-//   opacity: 0.9;
-//   margin: auto;
-//   margin-top: 78px;
-//   margin-left: 67px;
-//   text-align: center;
-//   border-radius: 35px;
-//   font-size: 21px;
-// }
 
-// }
 
 
 td, th {
@@ -317,10 +315,15 @@ td, th {
   text-align: center;
   padding: 8px;
 }
-.width-class
+
+
+
+.btn-group-delete
 {
-  width: 20%;;
+  padding-top: 20px;
 }
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
+// .del:hover{
+//   background-color: rgba(0, 0, 0, 0);
+//   border-radius: 25%;
+// }
+

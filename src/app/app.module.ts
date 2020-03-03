@@ -10,6 +10,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     BsDatepickerModule.forRoot(),
     MatFormFieldModule,
     MatNativeDateModule,
+    MatTooltipModule,
     AppRoutingModule,
     ReactiveFormsModule,
     MatDatepickerModule,

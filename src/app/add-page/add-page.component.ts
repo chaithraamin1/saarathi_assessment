@@ -11,7 +11,7 @@ import { Router } from '@angular/router'
 export class AddPageComponent implements OnInit {
   empname: any;
   registerForm: FormGroup;
-
+  deleteData:boolean=false;
   showdata: boolean = false;
   submitted: boolean = false;
   res: any = [];
@@ -87,8 +87,8 @@ export class AddPageComponent implements OnInit {
     this.res = this.empform.value;
     this.list.push(this.res)
     console.log("list", this.list)
-    
-    document.getElementById('id01').style.display = 'none';
+    this.clear();
+    // document.getElementById('id01').style.display = 'none';
   }
   
   clear() {
@@ -100,8 +100,10 @@ export class AddPageComponent implements OnInit {
 
 
   }
-  delete(id) {
-    this.list.splice(id, 1)
+  delete() {
+    this.deleteData=true;
+    document.getElementById('id02').style.display = 'block';
+    
   }
   add() {
     this.clear();
@@ -152,6 +154,7 @@ export class AddPageComponent implements OnInit {
   }
   checkDateError()
   {
+    debugger
     if (this.empform.controls["doj"].valid == false) {
       document.getElementById("dateError").style.display = 'block';
     }
@@ -160,6 +163,13 @@ export class AddPageComponent implements OnInit {
        document.getElementById("dateError").style.display = 'none';
     }
   }
-
+  deleteEmployeeID(id)
+  {
+    debugger
+    this.list.splice(id, 1)
+    // alert("item")
+    document.getElementById("id02").style.display = 'none';
+    
+  }
 
 }

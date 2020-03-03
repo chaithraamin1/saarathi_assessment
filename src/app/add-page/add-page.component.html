@@ -1,21 +1,16 @@
 
-    
-
-
 <div class="wrapper">
-  
-
-    <button class="btn-add" (click)="add()">ADD EMPLOYEE</button>
+   <button class="btnadd" (click)="add()">ADD EMPLOYEE</button>
     <br><br>
 
     <table>
-      <tr>
+      <tr style="background-color: #ddd;">
         <th>Name</th>
         <th>Employee Id</th>
         <th>Department</th>
         <th>Email Id</th>
         <th>DOJ</th>
-        <th>Actions</th>
+        <th>Action</th>
       </tr>
       <tbody *ngFor="let data of list">
         <tr>
@@ -24,7 +19,7 @@
           <td>{{data.dept}}</td>
           <td>{{data.email}}</td>
           <td>{{data.doj}}</td>
-          <td style="cursor: pointer"><i class="material-icons dell" (click)='delete(data.id)'>delete</i></td>
+          <td style="cursor: pointer;"><i class="material-icons dell del"  matTooltip="delete" (click)='delete()'>delete</i></td>
         </tr>
       </tbody>
     </table>
@@ -45,8 +40,8 @@
 
       <br /><br />
 
-      <!-- <mat-error *ngIf="getterinvoicenumber.length==0">Name is required</mat-error> -->
-      <div class = "labelStyle">  <label><b>Employee ID</b></label>  </div>
+      
+      <div class = "labelStyle content-space"> <label><b>Employee ID</b></label> </div>
 
    
       <input type="text"  formControlName="id" (keyup)="checkIdError()" required>
@@ -54,12 +49,12 @@
 
       <br /><br />
      
-      <div class = "labelStyle">
+      <div class = "labelStyle ">
       <label> <b>Department</b></label></div>
-      <select class="form-control" id="department" name="department" formControlName="dept" (click)="checkDepartment()">
+      <select class="form-control dept-content" id="department" name="department" formControlName="dept" (click)="checkDepartment()">
         <option value="1">Sales</option>
         <option value="2">Production</option>
-        <option value="3">Business</option>
+        <option value="3">Bussness</option>
         <option value="4">Marketing</option>
         <option value="5">Accounts</option>
 
@@ -67,24 +62,41 @@
       <div  id="departmentError" class = "errorMsg">Select department</div>
         <br /><br />
      
-      <div class = "labelStyle">
+      <div class = "labelStyle content-space">
       <b> Email ID</b></div>
       <input type="email"  id="emailid" formControlName="email" (keyup)="checkEmail()" required />
       <div  id="emailError" class = "errorMsg">Enter Email Id</div>
-
+    
       <br><br>
 
       <div class = "labelStyle">
-      <label><b>Date</b></label></div>
-     <input type = "date" formControlName="doj" (click)="checkDateError()"  required>
+      <label><b>DOJ</b></label></div>
+     <input type = "date" formControlName="doj" (keypress)="checkDateError()"  required>
      <div  id="dateError" class = "errorMsg">Select Date</div>
 
       <br><br>
-       <div class="clearfix">
-        <button type="submit" class="btn" >SUBMIT</button>
-        <button type="button" class="cancelbtn btn" (click)="clear()">CLEAR</button>
+       <div class="btn-group-submit">
+        <button type="submit" class="btnsubmit" >Submit</button>
+        <button type="button" class="btnclear" (click)="clear()">Clear</button>
       </div>
     </div>
   </div>
   </form>
+</div>
+
+<!-- delete modal -->
+
+<div id="id02" class="modal2" *ngIf="deleteData" >
+  <span  onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+  <div class="modal-content1">
+    <div class="delete-container">
+      <h1 class="del-cotent">Delete Account</h1>
+      <p  style="text-align: center;">Are you sure you want to delete your account?</p>
+    
+      <div class="btn-group-delete">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" (click)="deleteEmployeeID(list.id)" class="deletebtn">Delete</button>
+      </div>
+    </div>
+  </div>
 </div>
